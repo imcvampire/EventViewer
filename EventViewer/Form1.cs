@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace EventViewer
@@ -15,6 +9,23 @@ namespace EventViewer
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void eventLog1_EntryWritten(object sender, EntryWrittenEventArgs e)
+        {
+            eventLog1.Source = "Event Log Test 1";
+
+            eventLog1.WriteEntry("Log is written.");
+        }
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            Console.WriteLine(e.Node);
+        }
+
+        private void form1BindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
