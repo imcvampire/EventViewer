@@ -15,6 +15,8 @@ namespace EventViewer
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            toolStripProgressBar1.Increment(1);
+
             eventLog1.Log = "Application";
             eventLog1.Source = "Event Viewer";
         }
@@ -140,6 +142,11 @@ namespace EventViewer
                 listView1.Items.Insert(0, listViewItem);
             }
         }
-       
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems != null && listView1.SelectedItems.Count > 0 )
+                MessageBox.Show(listView1.SelectedItems[0].SubItems[2].Text);
+        }
     }
 }
