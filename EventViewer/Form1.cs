@@ -88,7 +88,7 @@ namespace EventViewer
             string filename = "";
             SaveFileDialog sfd = new SaveFileDialog();
 
-            sfd.Title = "SaveFileDialog Export2File";
+            sfd.Title = "Save File";
             sfd.Filter = "Text File (.txt) | *.txt";
 
             if (sfd.ShowDialog() == DialogResult.OK)
